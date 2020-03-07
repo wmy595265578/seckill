@@ -6,5 +6,6 @@ import (
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+    beego.Router("/seckill", &controllers.SkillController{},"*:SecKill")
+    beego.Router("/secinfo", &controllers.SkillController{},"*:SecInfo")
 }
