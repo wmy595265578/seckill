@@ -1,0 +1,2 @@
+2020/03/07 21:26:05.525 [I] [main.go:10]  init sec successful 
+2020/03/07 21:26:05.538 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
