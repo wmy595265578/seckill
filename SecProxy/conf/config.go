@@ -4,16 +4,31 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+	"strings"
+	"sync"
 )
 
 var (
-	SeckillConf = &SecSkillConf{}
+	SeckillConf = &SecSkillConf{
+		SecInfoConfMap:make(map[int]*SecInfoConfing),
+	}
 )
+
+type SecSkillConf struct {
+	RedisConf   RedisConfing
+	EtcdConf    EtcdConfig
+	LogPath     string
+	LogLevel    string
+	SecInfoConfMap map[int]*SecInfoConfing
+	RWSecKillLock     sync.RWMutex
+
+}
 
 type EtcdConfig struct {
 	EtcdAddr         string
 	EtcdTimeout      int
 	EtcdSecKeyPrefix string
+	EtcdProductKey   string
 }
 
 type RedisConfing struct {
@@ -23,14 +38,8 @@ type RedisConfing struct {
 	RedisMaxActive   int
 	RedisIdleTimeout int
 }
-type SecSkillConf struct {
-	RedisConf RedisConfing
-	EtcdConf  EtcdConfig
-	LogPath   string
-	LogLevel  string
-}
 
-type SecInfoConf struct {
+type SecInfoConfing struct {
 	ProductId int
 	StartTime int
 	EndTIme   int
@@ -60,8 +69,9 @@ func initConfig() (err error) {
 	}
 
 	etcdAddr := beego.AppConfig.String("etcd_addr")
-	etcdTimeout, err := beego.AppConfig.Int("etcd_timeout")
 	etcdSecKeyPrefix := beego.AppConfig.String("etcd_sec_key_prefix")
+	etcdProductKey := beego.AppConfig.String("etcd_product_key")
+	etcdTimeout, err := beego.AppConfig.Int("etcd_timeout")
 
 	if err != nil {
 		err = fmt.Errorf("init config failed, read EtcdTimeout error:%v", err)
@@ -77,9 +87,16 @@ func initConfig() (err error) {
 
 	SeckillConf.EtcdConf.EtcdAddr = etcdAddr
 	SeckillConf.EtcdConf.EtcdTimeout = etcdTimeout
+	SeckillConf.EtcdConf.EtcdSecKeyPrefix = etcdSecKeyPrefix
 
-	if len(redisAddr) == 0 || len(etcdAddr) == 0 || len(redisPassword) == 0 || len(etcdSecKeyPrefix) == 0 {
-		err = fmt.Errorf("init config failed.redis[%s] or etcd[%s]  or redisPassword[%s] or etcdSecKeyPrefix[%s] config is null", redisAddr, etcdAddr, redisPassword, etcdSecKeyPrefix)
+	if strings.HasSuffix(SeckillConf.EtcdConf.EtcdSecKeyPrefix, "/") == false {
+		SeckillConf.EtcdConf.EtcdSecKeyPrefix = SeckillConf.EtcdConf.EtcdSecKeyPrefix + "/"
+	}
+
+	SeckillConf.EtcdConf.EtcdProductKey = fmt.Sprintf("%s%s", SeckillConf.EtcdConf.EtcdSecKeyPrefix, etcdProductKey)
+
+	if len(redisAddr) == 0 || len(etcdAddr) == 0 || len(redisPassword) == 0 || len(etcdSecKeyPrefix) == 0 || len(etcdProductKey) == 0 {
+		err = fmt.Errorf("init config failed.redis[%s] or etcd[%s]  or redisPassword[%s] or etcdSecKeyPrefix[%s]  or etcdProductKey[%s] config is null", redisAddr, etcdAddr, redisPassword, etcdSecKeyPrefix, etcdProductKey)
 		return
 	}
 

@@ -3,9 +3,9 @@ package conf
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"github.com/astaxie/beego/logs"
 	etcd_client "github.com/coreos/etcd/clientv3"
+	"github.com/coreos/etcd/mvcc/mvccpb"
 	"github.com/gomodule/redigo/redis"
 	"time"
 )
@@ -81,18 +81,71 @@ func initLogs() (err error) {
 }
 
 func loadSecConf() (err error) {
-	key := fmt.Sprintf("%s/product", SeckillConf.EtcdConf.EtcdSecKeyPrefix)
 	ctx, cancle := context.WithTimeout(context.Background(), time.Second)
-	resp, err := etcdClient.Get(ctx, key)
+	resp, err := etcdClient.Get(ctx, SeckillConf.EtcdConf.EtcdProductKey)
+	logs.Info("etcd key[%s]", SeckillConf.EtcdConf.EtcdProductKey)
 	if err != nil {
-		logs.Error("Get from etcd key[%s] config failed,err:%v", key, err)
+		logs.Error("Get from etcd key[%s] config failed,err:%v", SeckillConf.EtcdConf.EtcdProductKey, err)
 		return
 	}
+	var SecProductInfo []SecInfoConfing
 	for k, v := range resp.Kvs {
 		logs.Debug("key[%v] valud[%v]", k, v)
+		err = json.Unmarshal(v.Value, &SecProductInfo)
+		if err != nil {
+			logs.Error("Unmasrshal etcd config failed ,err :%v", err)
+			return
+		}
+		logs.Debug("sec info conf is [%v]", SecProductInfo)
 	}
 	cancle()
+	updateSecProductInfo(SecProductInfo)
 	return
+}
+
+func initSecProductWatcher() {
+	go watcherSecProductKey(SeckillConf.EtcdConf.EtcdProductKey)
+}
+
+func watcherSecProductKey(key string) {
+	logs.Debug("begin watch key:%s", key)
+	for {
+		rch := etcdClient.Watch(context.Background(), key)
+		var SecProductInfo []SecInfoConfing
+		var getConfSucc = true
+		for wresp := range rch {
+			for _, ev := range wresp.Events {
+				if ev.Type == mvccpb.DELETE {
+					logs.Warn("key[%s] 's config deleted", key)
+					continue
+				}
+
+				if ev.Type == mvccpb.PUT && string(ev.Kv.Key) == key {
+					err := json.Unmarshal(ev.Kv.Value, &SecProductInfo)
+					if err != nil {
+						logs.Error("key[%s] ,Unmarshal failed,err:%v", ev.Kv.Key, err)
+						getConfSucc = false
+						continue
+					}
+
+				}
+				logs.Debug("get config from etcd, %s %q : %q\n", ev.Type, ev.Kv.Key, ev.Kv.Value)
+			}
+			if getConfSucc {
+				logs.Debug("get config from etcd succ, %v", SecProductInfo)
+				updateSecProductInfo(SecProductInfo)
+			}
+		}
+	}
+}
+func updateSecProductInfo(SecProductInfo []SecInfoConfing) {
+	var tmp map[int]*SecInfoConfing = make(map[int]*SecInfoConfing, 1024)
+	for _, v := range SecProductInfo {
+		tmp[v.ProductId] = &v
+	}
+	SeckillConf.RWSecKillLock.Lock()
+	SeckillConf.SecInfoConfMap = tmp
+	SeckillConf.RWSecKillLock.Unlock()
 }
 
 func InitSec() (err error) {
@@ -127,6 +180,8 @@ func InitSec() (err error) {
 		panic(err)
 		return
 	}
+
+	initSecProductWatcher()
 	logs.Info("init sec successful ")
 
 	return
