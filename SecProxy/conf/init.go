@@ -83,7 +83,10 @@ func initLogs() (err error) {
 func loadSecConf() (err error) {
 	ctx, cancle := context.WithTimeout(context.Background(), time.Second)
 	resp, err := etcdClient.Get(ctx, SeckillConf.EtcdConf.EtcdProductKey)
+<<<<<<< HEAD
 	logs.Info("etcd key[%s]", SeckillConf.EtcdConf.EtcdProductKey)
+=======
+>>>>>>> a99bb844d7fddf5f72fd403421ea443391587e47
 	if err != nil {
 		logs.Error("Get from etcd key[%s] config failed,err:%v", SeckillConf.EtcdConf.EtcdProductKey, err)
 		return

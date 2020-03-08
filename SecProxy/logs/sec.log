@@ -21,6 +21,7 @@
 2020/03/08 00:49:56.538 [I] [main.go:10]  init sec successful 
 2020/03/08 00:49:56.538 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
 2020/03/08 00:49:56.545 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+<<<<<<< HEAD
 2020/03/08 11:38:54.158 [I] [main.go:10]  init sec successful 
 2020/03/08 11:38:54.158 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
 2020/03/08 11:38:54.171 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
@@ -167,3 +168,5 @@
 2020/03/08 12:40:49.277 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
 2020/03/08 12:40:49.292 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
 2020/03/08 12:40:57.290 [D] [server.go:2802]  |      127.0.0.1|[97;42m 200 [0m|    165.478µs|   match|[97;44m GET     [0m /secinfo   r:/secinfo
+=======
+>>>>>>> a99bb844d7fddf5f72fd403421ea443391587e47

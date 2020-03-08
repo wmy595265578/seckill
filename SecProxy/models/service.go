@@ -1,5 +1,6 @@
 package models
 
+<<<<<<< HEAD
 import (
 	"fmt"
 	"seckill/SecProxy/conf"
@@ -21,3 +22,5 @@ func SecInfo(productId int) (data map[string]interface{}, code int, err error) {
 	data["status"] = v.Status
 	return
 }
+=======
+>>>>>>> a99bb844d7fddf5f72fd403421ea443391587e47
