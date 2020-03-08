@@ -1,14 +1,23 @@
-2020/03/07 21:26:05.525 [I] [main.go:10]  init sec successful 
-2020/03/07 21:26:05.538 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 21:26:34.956 [I] [main.go:10]  init sec successful 
-2020/03/07 21:26:34.963 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 21:56:36.828 [I] [main.go:10]  init sec successful 
-2020/03/07 21:56:36.841 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 21:58:29.954 [I] [main.go:10]  init sec successful 
-2020/03/07 21:58:29.971 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 22:02:58.795 [I] [main.go:10]  init sec successful 
-2020/03/07 22:02:58.802 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 22:06:44.280 [I] [main.go:10]  init sec successful 
-2020/03/07 22:06:44.288 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
-2020/03/07 22:12:07.230 [I] [main.go:10]  init sec successful 
-2020/03/07 22:12:07.242 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:01:43.527 [I] [main.go:10]  init sec successful 
+2020/03/08 00:01:43.537 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:01:44.783 [I] [main.go:10]  init sec successful 
+2020/03/08 00:01:44.789 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:02:53.453 [I] [main.go:10]  init sec successful 
+2020/03/08 00:02:53.465 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:16:58.461 [I] [main.go:10]  init sec successful 
+2020/03/08 00:16:58.472 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:19:22.454 [I] [main.go:10]  init sec successful 
+2020/03/08 00:19:22.454 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
+2020/03/08 00:19:22.462 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:35:10.568 [I] [main.go:10]  init sec successful 
+2020/03/08 00:35:10.568 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
+2020/03/08 00:35:10.592 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:35:11.771 [I] [main.go:10]  init sec successful 
+2020/03/08 00:35:11.771 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
+2020/03/08 00:35:11.778 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:49:55.254 [I] [main.go:10]  init sec successful 
+2020/03/08 00:49:55.254 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
+2020/03/08 00:49:55.268 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/08 00:49:56.538 [I] [main.go:10]  init sec successful 
+2020/03/08 00:49:56.538 [D] [asm_amd64.s:1357]  begin watch key:seckillproduct
+2020/03/08 00:49:56.545 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
