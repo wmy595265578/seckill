@@ -8,6 +8,7 @@ import (
 	"github.com/coreos/etcd/mvcc/mvccpb"
 	"github.com/gomodule/redigo/redis"
 	"time"
+	"seckill/SecProxy/models"
 )
 
 var (
@@ -15,29 +16,29 @@ var (
 	etcdClient *etcd_client.Client
 )
 
-func initRedis() (err error) {
-	redisPoll = &redis.Pool{
-		MaxIdle:     SeckillConf.RedisConf.RedisMaxIdle,
-		MaxActive:   SeckillConf.RedisConf.RedisMaxActive,
-		IdleTimeout: time.Duration(SeckillConf.RedisConf.RedisIdleTimeout) * time.Second,
-		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", SeckillConf.RedisConf.RedisAddr, redis.DialPassword(SeckillConf.RedisConf.RedisPassword))
-		},
-	}
-	conn := redisPoll.Get()
-	defer conn.Close()
-	_, err = conn.Do("ping")
-	if err != nil {
-		logs.Error("conn redis failed,err:%v", err)
-		return
-	}
-	return
-}
+//func initRedis() (err error) {
+//	redisPoll = &redis.Pool{
+//		MaxIdle:    models.SeckillConf.RedisProxy2LayerConf.RedisMaxIdle,
+//		MaxActive:   models.SeckillConf.RedisProxy2LayerConf.RedisMaxActive,
+//		IdleTimeout: time.Duration(models.SeckillConf.RedisProxy2LayerConf.RedisIdleTimeout) * time.Second,
+//		Dial: func() (redis.Conn, error) {
+//			return redis.Dial("tcp", models.SeckillConf.RedisProxy2LayerConf.RedisAddr, redis.DialPassword(models.SeckillConf.RedisProxy2LayerConf.RedisPassword))
+//		},
+//	}
+//	conn := redisPoll.Get()
+//	defer conn.Close()
+//	_, err = conn.Do("ping")
+//	if err != nil {
+//		logs.Error("conn redis failed,err:%v", err)
+//		return
+//	}
+//	return
+//}
 
 func initEtcd() (err error) {
 	cli, err := etcd_client.New(etcd_client.Config{
-		Endpoints:   []string{SeckillConf.EtcdConf.EtcdAddr},
-		DialTimeout: time.Duration(SeckillConf.EtcdConf.EtcdTimeout) * time.Second,
+		Endpoints:   []string{models.SeckillConf.EtcdConf.EtcdAddr},
+		DialTimeout: time.Duration(models.SeckillConf.EtcdConf.EtcdTimeout) * time.Second,
 	})
 	if err != nil {
 		logs.Error("connect etcd failed, err:", err)
@@ -66,8 +67,8 @@ func convertLogLevel(level string) int {
 
 func initLogs() (err error) {
 	config := make(map[string]interface{})
-	config["filename"] = SeckillConf.LogPath
-	config["level"] = convertLogLevel(SeckillConf.LogLevel)
+	config["filename"] = models.SeckillConf.LogPath
+	config["level"] = convertLogLevel(models.SeckillConf.LogLevel)
 
 	configStr, err := json.Marshal(config)
 	if err != nil {
@@ -82,13 +83,13 @@ func initLogs() (err error) {
 
 func loadSecConf() (err error) {
 	ctx, cancle := context.WithTimeout(context.Background(), time.Second)
-	resp, err := etcdClient.Get(ctx, SeckillConf.EtcdConf.EtcdProductKey)
-	logs.Info("etcd key[%s]", SeckillConf.EtcdConf.EtcdProductKey)
+	resp, err := etcdClient.Get(ctx, models.SeckillConf.EtcdConf.EtcdProductKey)
+	logs.Info("etcd key[%s]", models.SeckillConf.EtcdConf.EtcdProductKey)
 	if err != nil {
-		logs.Error("Get from etcd key[%s] config failed,err:%v", SeckillConf.EtcdConf.EtcdProductKey, err)
+		logs.Error("Get from etcd key[%s] config failed,err:%v", models.SeckillConf.EtcdConf.EtcdProductKey, err)
 		return
 	}
-	var SecProductInfo []SecInfoConfing
+	var SecProductInfo []models.SecInfoConfing
 	for k, v := range resp.Kvs {
 		logs.Debug("key[%v] valud[%v]", k, v)
 		err = json.Unmarshal(v.Value, &SecProductInfo)
@@ -104,14 +105,14 @@ func loadSecConf() (err error) {
 }
 
 func initSecProductWatcher() {
-	go watcherSecProductKey(SeckillConf.EtcdConf.EtcdProductKey)
+	go watcherSecProductKey(models.SeckillConf.EtcdConf.EtcdProductKey)
 }
 
 func watcherSecProductKey(key string) {
 	logs.Debug("begin watch key:%s", key)
 	for {
 		rch := etcdClient.Watch(context.Background(), key)
-		var SecProductInfo []SecInfoConfing
+		var SecProductInfo []models.SecInfoConfing
 		var getConfSucc = true
 		for wresp := range rch {
 			for _, ev := range wresp.Events {
@@ -138,14 +139,15 @@ func watcherSecProductKey(key string) {
 		}
 	}
 }
-func updateSecProductInfo(SecProductInfo []SecInfoConfing) {
-	var tmp map[int]*SecInfoConfing = make(map[int]*SecInfoConfing, 1024)
+func updateSecProductInfo(SecProductInfo []models.SecInfoConfing) {
+	var tmp map[int]*models.SecInfoConfing = make(map[int]*models.SecInfoConfing, 1024)
 	for _, v := range SecProductInfo {
-		tmp[v.ProductId] = &v
+		productInfo := v
+		tmp[v.ProductId] = &productInfo
 	}
-	SeckillConf.RWSecKillLock.Lock()
-	SeckillConf.SecInfoConfMap = tmp
-	SeckillConf.RWSecKillLock.Unlock()
+	models.SeckillConf.RWSecKillLock.Lock()
+	models.SeckillConf.SecInfoConfMap = tmp
+	models.SeckillConf.RWSecKillLock.Unlock()
 }
 
 func InitSec() (err error) {
