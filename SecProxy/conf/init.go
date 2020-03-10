@@ -6,13 +6,11 @@ import (
 	"github.com/astaxie/beego/logs"
 	etcd_client "github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/mvcc/mvccpb"
-	"github.com/gomodule/redigo/redis"
-	"time"
 	"seckill/SecProxy/models"
+	"time"
 )
 
 var (
-	redisPoll  *redis.Pool
 	etcdClient *etcd_client.Client
 )
 
@@ -163,7 +161,7 @@ func InitSec() (err error) {
 		return
 	}
 
-	err = initRedis()
+	err = models.InitRedis()
 	if err != nil {
 		logs.Error("init Redis failed err:%v", err)
 		panic(err)
@@ -188,3 +186,5 @@ func InitSec() (err error) {
 
 	return
 }
+
+

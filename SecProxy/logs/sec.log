@@ -432,3 +432,165 @@
 2020/03/10 01:24:43.753 [I] [main.go:10]  init sec successful 
 2020/03/10 01:24:43.753 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
 2020/03/10 01:24:43.767 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 18:47:41.657 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 18:47:41.657 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 18:47:41.657 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 18:47:41.657 [I] [main.go:10]  init sec successful 
+2020/03/10 18:47:41.657 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 18:47:41.679 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 18:47:56.206 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 18:47:56.207 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 18:47:56.207 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 18:47:56.207 [I] [main.go:10]  init sec successful 
+2020/03/10 18:47:56.207 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 18:47:56.221 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:21:32.156 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:21:32.157 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:21:32.157 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:21:32.157 [I] [main.go:10]  init sec successful 
+2020/03/10 19:21:32.157 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:21:32.171 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:51:53.207 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:51:53.208 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:51:53.208 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:51:53.208 [I] [main.go:10]  init sec successful 
+2020/03/10 19:51:53.208 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:51:53.222 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:51:56.134 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:51:56.134 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:51:56.134 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:51:56.135 [I] [main.go:10]  init sec successful 
+2020/03/10 19:51:56.135 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:51:56.142 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:57:53.700 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:57:53.701 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:57:53.701 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:57:53.701 [I] [main.go:10]  init sec successful 
+2020/03/10 19:57:53.701 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:57:53.719 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:57:54.615 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:57:54.615 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:57:54.615 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:57:54.616 [I] [main.go:10]  init sec successful 
+2020/03/10 19:57:54.616 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:57:54.623 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 19:58:02.111 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 19:58:02.111 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 19:58:02.112 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 19:58:02.112 [I] [main.go:10]  init sec successful 
+2020/03/10 19:58:02.112 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 19:58:02.119 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:14:56.670 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 20:14:56.670 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:14:56.670 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:14:56.671 [I] [main.go:10]  init sec successful 
+2020/03/10 20:14:56.671 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:14:56.686 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:14:57.867 [I] [init.go:179]  etcd key[seckill/product]
+2020/03/10 20:14:57.868 [D] [init.go:179]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:14:57.868 [D] [init.go:179]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:14:57.868 [I] [main.go:10]  init sec successful 
+2020/03/10 20:14:57.868 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:14:57.874 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:18:29.226 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 20:18:29.226 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:18:29.226 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:18:29.226 [I] [main.go:10]  init sec successful 
+2020/03/10 20:18:29.227 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:18:29.241 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:19:36.343 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 20:19:36.343 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:19:36.343 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:19:36.343 [I] [main.go:10]  init sec successful 
+2020/03/10 20:19:36.343 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:19:36.349 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:20:19.444 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 20:20:19.445 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:20:19.445 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:20:19.445 [I] [main.go:10]  init sec successful 
+2020/03/10 20:20:19.445 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:20:19.453 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:24:30.158 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 20:24:30.158 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:24:30.158 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:24:30.158 [I] [main.go:10]  init sec successful 
+2020/03/10 20:24:30.158 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:24:30.173 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 20:57:26.266 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 20:57:26.266 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 20:57:26.267 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 20:57:26.267 [I] [main.go:10]  init sec successful 
+2020/03/10 20:57:26.267 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 20:57:26.281 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 21:08:44.755 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 21:08:44.756 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 21:08:44.756 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 21:08:44.756 [I] [main.go:10]  init sec successful 
+2020/03/10 21:08:44.756 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 21:08:44.773 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 21:35:21.890 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 21:35:21.890 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 21:35:21.890 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 21:35:21.890 [I] [main.go:10]  init sec successful 
+2020/03/10 21:35:21.890 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 21:35:21.908 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 22:04:55.119 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 22:04:55.119 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 22:04:55.119 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 22:04:55.119 [I] [main.go:10]  init sec successful 
+2020/03/10 22:04:55.120 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 22:04:55.139 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 22:07:13.472 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 22:07:13.472 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 22:07:13.472 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 22:07:13.472 [I] [main.go:10]  init sec successful 
+2020/03/10 22:07:13.473 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 22:07:13.480 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 22:22:01.270 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 22:22:01.270 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 22:22:01.270 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 22:22:01.270 [I] [main.go:10]  init sec successful 
+2020/03/10 22:22:01.270 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 22:22:01.284 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 22:22:45.579 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 22:22:45.579 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 22:22:45.579 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 22:22:45.579 [I] [main.go:10]  init sec successful 
+2020/03/10 22:22:45.579 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 22:22:45.586 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 22:55:44.539 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 22:55:44.539 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 22:55:44.539 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 22:55:44.539 [I] [main.go:10]  init sec successful 
+2020/03/10 22:55:44.539 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 22:55:44.553 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 23:04:13.526 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 23:04:13.527 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 23:04:13.527 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 23:04:13.527 [I] [main.go:10]  init sec successful 
+2020/03/10 23:04:13.527 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 23:04:13.549 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 23:29:56.929 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 23:29:56.929 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 23:29:56.929 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 23:29:56.929 [I] [main.go:10]  init sec successful 
+2020/03/10 23:29:56.929 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 23:29:56.937 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 23:31:56.137 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 23:31:56.137 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 23:31:56.137 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 23:31:56.137 [I] [main.go:10]  init sec successful 
+2020/03/10 23:31:56.137 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 23:31:56.150 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 23:33:04.601 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 23:33:04.601 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 23:33:04.601 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 23:33:04.601 [I] [main.go:10]  init sec successful 
+2020/03/10 23:33:04.601 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 23:33:04.619 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/10 23:44:08.808 [I] [init.go:177]  etcd key[seckill/product]
+2020/03/10 23:44:08.809 [D] [init.go:177]  key[0] valud[key:"seckill/product" create_revision:43 mod_revision:47 version:5 value:"[{\"ProductId\":1021,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":1000,\"Left\":1000},{\"ProductId\":1026,\"StartTime\":1505008800,\"EndTime\":1505012400,\"Status\":0,\"Total\":2000,\"Left\":1000}]" ]
+2020/03/10 23:44:08.809 [D] [init.go:177]  sec info conf is [[{1021 1505008800 1505012400 0 1000 1000} {1026 1505008800 1505012400 0 2000 1000}]]
+2020/03/10 23:44:08.809 [I] [main.go:10]  init sec successful 
+2020/03/10 23:44:08.809 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
+2020/03/10 23:44:08.822 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80

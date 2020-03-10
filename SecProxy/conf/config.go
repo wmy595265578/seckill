@@ -118,12 +118,40 @@ func initConfig() (err error) {
 	models.SeckillConf.LogPath = logpath
 	models.SeckillConf.LogLevel = loglevel
 
-	UsersecAccessLimit, err := beego.AppConfig.Int("user_sec_access_limit")
+	models.SeckillConf.CookieSecretKey = beego.AppConfig.String("cookie_secretkey")
+
+	referList := beego.AppConfig.String("refer_whitelist")
+	if len(referList) > 0 {
+		models.SeckillConf.ReferWhiteList = strings.Split(referList, ",")
+	}
+
+	ipSecLimit, err := beego.AppConfig.Int("ip_sec_access_limit")
+	if err != nil {
+		err = fmt.Errorf("init config failed, read ip_sec_access_limit error:%v", err)
+		return
+	}
+	models.SeckillConf.AccessLimitConf.IPSecAccessLimit = ipSecLimit
+
+	UserSecAccessLimit, err := beego.AppConfig.Int("user_sec_access_limit")
 	if err != nil {
 		err = fmt.Errorf("init config failed, read user_sec_access_limit error:%v", err)
 		return
 	}
+	models.SeckillConf.UserSecAccessLimit = UserSecAccessLimit
 
-	models.SeckillConf.UserSecAccessLimit = UsersecAccessLimit
+	UserIdMinLimit, err := beego.AppConfig.Int("user_min_access_limit")
+	if err != nil {
+		err = fmt.Errorf("init config failed, read user_min_access_limit error:%v", err)
+		return
+	}
+
+	models.SeckillConf.AccessLimitConf.UserMinAccessLimit = UserIdMinLimit
+	ipMinLimit, err := beego.AppConfig.Int("ip_min_access_limit")
+	if err != nil {
+		err = fmt.Errorf("init config failed, read ip_min_access_limit error:%v", err)
+		return
+	}
+
+	models.SeckillConf.AccessLimitConf.IPMinAccessLimit = ipMinLimit
 	return
 }

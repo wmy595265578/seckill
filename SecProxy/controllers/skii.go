@@ -41,7 +41,7 @@ func (p *SkillController) SecKill() {
 	secRequest.SecTime = secTime
 	secRequest.Source = source
 	secRequest.UserId, err = strconv.Atoi(p.Ctx.GetCookie("userId"))
-	secRequest.UserAuthSign = p.Ctx.GetCookie("UserAuthSing")
+	secRequest.UserAuthSign = p.Ctx.GetCookie("UserAuthSign")
 	secRequest.AccessTime = time.Now()
 	logs.Debug("client request:[%v]", secRequest)
 

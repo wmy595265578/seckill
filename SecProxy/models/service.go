@@ -9,7 +9,7 @@ import (
 func SecInfoList() (data []map[string]interface{}, code int, err error) {
 	SeckillConf.RWSecKillLock.RLock()
 	defer SeckillConf.RWSecKillLock.RUnlock()
-	for _, v := range  SeckillConf.SecInfoConfMap {
+	for _, v := range SeckillConf.SecInfoConfMap {
 		item, _, err := SecInfoById(v.ProductId)
 		if err != nil {
 			logs.Error("get product_id[%d] failed,err:%v", err)
@@ -24,7 +24,7 @@ func SecInfoList() (data []map[string]interface{}, code int, err error) {
 func SecInfo(productId int) (data []map[string]interface{}, code int, err error) {
 
 	SeckillConf.RWSecKillLock.RLock()
-	defer  SeckillConf.RWSecKillLock.RUnlock()
+	defer SeckillConf.RWSecKillLock.RUnlock()
 	item, code, err := SecInfoById(productId)
 	if err != nil {
 		return
@@ -84,12 +84,12 @@ func SecKill(req *SecRequest) (data map[string]interface{}, code int, err error)
 	SeckillConf.RWSecKillLock.RLock()
 	defer SeckillConf.RWSecKillLock.RUnlock()
 
-	//err = userCheck(req)
-	//if err != nil {
-	//	code = ErrUserCheckAuthFailed
-	//	logs.Warn("userId[%d], invalid,checked failed,req[%v]", req.UserId, req)
-	//	return
-	//}
+	err = userCheck(req)
+	if err != nil {
+		code = ErrUserCheckAuthFailed
+		logs.Warn("userId[%d], invalid,checked failed,req[%v]", req.UserId, req)
+		return
+	}
 
 	err = antiSpam(req)
 	if err != nil {
@@ -105,6 +105,37 @@ func SecKill(req *SecRequest) (data map[string]interface{}, code int, err error)
 
 	if code != 0 {
 		logs.Warn("userId[%d] secInfoByid failed, code[%d] req[%v]", req.UserId, code, req)
+		return
+	}
+
+	userKey := fmt.Sprintf("%s %s", req.UserId, req.ProductId)
+	SeckillConf.UserConnMap[userKey] = req.ResultChan
+
+	SeckillConf.SecReqChan <- req
+
+	ticker := time.NewTicker(time.Second * 10)
+
+	defer func() {
+		ticker.Stop()
+		SeckillConf.UserConnMapLock.Lock()
+		delete(SeckillConf.UserConnMap, userKey)
+		SeckillConf.UserConnMapLock.Unlock()
+	}()
+
+	select {
+	case <-ticker.C:
+		code = ErrProcessTimeout
+		err = fmt.Errorf("request timeout")
+		return
+	case <-req.CloseNotify:
+		code = ErrClientClosed
+		err = fmt.Errorf("client already closed")
+
+	case result := <-req.ResultChan:
+		code = result.Code
+		data["product_id"] = result.ProductId
+		data["token"] = result.Token
+		data["user_id"] = result.UserId
 		return
 	}
 
