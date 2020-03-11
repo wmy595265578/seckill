@@ -49,3 +49,9 @@
 2020/03/11 14:38:26.331 [I] [main.go:10]  init sec successful 
 2020/03/11 14:38:26.331 [D] [asm_amd64.s:1357]  begin watch key:seckill/product
 2020/03/11 14:38:26.344 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:80
+2020/03/11 16:28:40.853 [D] [skii.go:75]  get product[1026],result[map[end:true product_id:1026 start:false status:sec kill is already end]],all[map[1021:0xc0003240c0 1026:0xc0003240f0]],v[&{1026 1505008800 1505012400 0 2000 1000}]
+2020/03/11 16:28:40.853 [D] [skii.go:75]  get product[1021],result[map[end:true product_id:1021 start:false status:sec kill is already end]],all[map[1021:0xc0003240c0 1026:0xc0003240f0]],v[&{1021 1505008800 1505012400 0 1000 1000}]
+2020/03/11 16:28:40.853 [D] [server.go:2802]  |      127.0.0.1|[97;42m 200 [0m|    457.887µs|   match|[97;44m GET     [0m /secinfo   r:/secinfo
+2020/03/11 16:28:41.594 [D] [skii.go:75]  get product[1021],result[map[end:true product_id:1021 start:false status:sec kill is already end]],all[map[1021:0xc0003240c0 1026:0xc0003240f0]],v[&{1021 1505008800 1505012400 0 1000 1000}]
+2020/03/11 16:28:41.594 [D] [skii.go:75]  get product[1026],result[map[end:true product_id:1026 start:false status:sec kill is already end]],all[map[1021:0xc0003240c0 1026:0xc0003240f0]],v[&{1026 1505008800 1505012400 0 2000 1000}]
+2020/03/11 16:28:41.594 [D] [server.go:2802]  |      127.0.0.1|[97;42m 200 [0m|    169.697µs|   match|[97;44m GET     [0m /secinfo   r:/secinfo
