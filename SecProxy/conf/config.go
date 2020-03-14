@@ -18,6 +18,7 @@ func initConfig() (err error) {
 		err = fmt.Errorf("init config failed, read redis_proxy2layer_idle error:%v", err)
 		return
 	}
+
 	redisProxy2layerMaxActive, err := beego.AppConfig.Int("redis_proxy2layer_active")
 	if err != nil {
 		err = fmt.Errorf("init config failed, read redis_proxy2layer_active error:%v", err)
@@ -80,6 +81,7 @@ func initConfig() (err error) {
 		err = fmt.Errorf("init config failed, read redis_layer2proxy_idle_timeout error:%v", err)
 		return
 	}
+
 	models.SeckillConf.RedisLayer2ProxyConf.RedisAddr = redisLayer2proxyAddr
 	models.SeckillConf.RedisLayer2ProxyConf.RedisPassword = redisLayer2proxyPassword
 	models.SeckillConf.RedisLayer2ProxyConf.RedisMaxActive = redisLayer2proxyMaxActive
