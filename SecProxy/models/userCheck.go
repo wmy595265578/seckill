@@ -22,7 +22,7 @@ func userCheck(req *SecRequest) (err error) {
 		return
 	}
 
-	authData := fmt.Sprintf("%d:%s", req.UserId, SeckillConf.CookieSecretKey)
+	authData := fmt.Sprintf("%d:%s",  req.UserId, SeckillConf.CookieSecretKey)
 	authSin := fmt.Sprintf("%x", md5.Sum([]byte(authData)))
 
 	if authSin != req.UserAuthSign {
